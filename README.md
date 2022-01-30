@@ -1,22 +1,23 @@
 # How to handle Sidekiq in Practice step wise
 
-1. gem install skp
-2. If you purchased the Workshop yourself, you will receive a Slack channel invitation shortly. If you are attending the Workshop as part of a group and your license key was provided to you, you need to register your key to get an invite:
+### 1. `gem install skp`
+### 2. If you purchased the Workshop yourself, you will receive a Slack channel invitation shortly. If you are attending the Workshop as part of a group and your license key was provided to you, you need to register your key to get an invite:
 
-$ skp key register [YOUR_EMAIL_ADDRESS]
+$ `skp key register [YOUR_EMAIL_ADDRESS]`
 In my case, it is my office email address.
 Please note you can only register your key once.
 
-3. skp start
-4. Few Important commands
+### 3. `skp start`
+### 4. Few Important commands
 Here are some important commands for you to know:
-
+```
 $ skp next     | Proceed to the next part of the workshop.
 $ skp complete | Mark current lesson as complete.
 $ skp list     | List all workshop lessons. Shows progress.
 $ skp download | Download all lessons. Useful for offline access.
 $ skp show     | Show any particular workshop lesson.
 $ skp current  | Opens the current lesson.
+```
 Generally, you'll just be doing a lot of $ skp next! It's the same thing as $ skp complete && skp show.
 
 # Determine sidekiq statistics
@@ -37,7 +38,4 @@ Generally, you'll just be doing a lot of $ skp next! It's the same thing as $ sk
       "Retries latency: #{retry_queue_latency_in_seconds}"
     )
     Sidekiq.logger.warn(Sidekiq::CLI.r + "*" * 20 + Sidekiq::CLI.reset)
-    
-
-
 ```
